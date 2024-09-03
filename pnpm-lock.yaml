@@ -92,6 +92,9 @@ importers:
 
   apps/web:
     dependencies:
+      '@certilingu/sample-lib':
+        specifier: workspace:^
+        version: link:../../libs/sample-lib
       next:
         specifier: 14.2.7
         version: 14.2.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -125,6 +128,12 @@ importers:
         version: 3.4.10(ts-node@10.9.2(@types/node@20.16.3)(typescript@5.5.4))
       typescript:
         specifier: ^5
+        version: 5.5.4
+
+  libs/sample-lib:
+    devDependencies:
+      typescript:
+        specifier: ^5.5.4
         version: 5.5.4
 
 packages:
