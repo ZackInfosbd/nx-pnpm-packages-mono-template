@@ -5,10 +5,21 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "pnpx nx run-many -t build",
+    "format": "prettier  \"{apps,libs}/**/*.{ts,tsx,js,json}\" --ignore-path .gitignore",
+    "format:check": "pnpm format --check",
+    "format:write": "pnpm format --write",
+    "lint": "pnpx nx run-many -t lint",
+    "tsc": "pnpx nx run-many -t tsc",
+    "validate": "pnpm format:write && pnpm tsc && pnpm lint && pnpm build",
+    "prepare": "husky install",
     "cloc": "npx cloc --exclude-dir=node_modules,dist,build,yarn.lock,package.json,generated.tsx,.next,.nx ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "devDependencies": {
+    "prettier": "^3.0.0"
+  },
   "packageManager": "pnpm@9.9.0+sha512.60c18acd138bff695d339be6ad13f7e936eea6745660d4cc4a776d5247c540d0edee1a563695c183a66eb917ef88f2b4feb1fc25f32a7adcadc7aaf3438e99c1"
 }
